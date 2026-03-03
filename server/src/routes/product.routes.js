@@ -9,7 +9,8 @@ const {
 } = require('../controllers/product.controller');
 const { protect, admin } = require('../middleware/auth.middleware');
 
-const { productSchema, validate } = require('../middleware/validate.middleware');
+const validate = require('../middleware/validate.middleware');
+const { productSchema } = require('../utils/validationSchemas');
 
 router.route('/')
     .get(getProducts)

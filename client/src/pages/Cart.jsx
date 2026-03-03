@@ -44,7 +44,7 @@ const Cart = () => {
                                 <Link to={`/product/${item._id}`}>
                                     <h3 className="text-xl font-bold text-navy hover:text-accent transition-colors">{item.title}</h3>
                                 </Link>
-                                <p className="text-accent font-black text-lg">${item.price.toFixed(2)}</p>
+                                <p className="text-accent font-black text-lg">₹{item.price.toFixed(2)}</p>
                             </div>
 
                             <div className="flex items-center gap-4 bg-slate-50 p-1.5 rounded-2xl border border-slate-100">
@@ -86,7 +86,7 @@ const Cart = () => {
                                 <div className="space-y-4 border-b border-white/10 pb-6">
                                     <div className="flex justify-between font-medium opacity-60">
                                         <span>Subtotal</span>
-                                        <span>${cartTotal.toFixed(2)}</span>
+                                        <span>₹{cartTotal.toFixed(2)}</span>
                                     </div>
                                     <div className="flex justify-between font-medium opacity-60">
                                         <span>Delivery</span>
@@ -96,19 +96,19 @@ const Cart = () => {
 
                                 <div className="flex justify-between items-end">
                                     <span className="text-lg font-bold opacity-60">Total amount</span>
-                                    <span className="text-4xl font-black">${cartTotal.toFixed(2)}</span>
+                                    <span className="text-4xl font-black">₹{cartTotal.toFixed(2)}</span>
                                 </div>
+
+                                <button
+                                    onClick={() => navigate('/checkout')}
+                                    className="w-full bg-accent hover:bg-accent/90 text-white py-5 rounded-[2rem] font-bold text-lg transition-all shadow-xl shadow-accent/10 active:scale-[0.98] flex items-center justify-center gap-2"
+                                >
+                                    Checkout <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                                </button>
                             </div>
 
-                            <button
-                                onClick={() => navigate('/checkout')}
-                                className="w-full bg-accent hover:bg-accent/90 text-white py-5 rounded-[2rem] font-bold text-lg transition-all shadow-xl shadow-accent/10 active:scale-[0.98] flex items-center justify-center gap-2"
-                            >
-                                Checkout <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                            </button>
+                            <div className="absolute top-[-20%] right-[-20%] w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none" />
                         </div>
-
-                        <div className="absolute top-[-20%] right-[-20%] w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none" />
                     </div>
 
                     <div className="p-6 bg-white rounded-[2rem] border border-slate-100 flex items-center gap-4">

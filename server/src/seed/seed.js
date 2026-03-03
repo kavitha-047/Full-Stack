@@ -8,100 +8,100 @@ dotenv.config({ path: path.join(__dirname, '../../.env') });
 
 const products = [
     {
-        title: 'Organic Bananas',
-        price: 0.99,
-        category: 'Fruits',
-        image: 'https://images.unsplash.com/photo-1543218024-57a70143c369?auto=format&fit=crop&q=80&w=400',
-        description: 'Fresh organic bananas from local farms.',
-        stock: 100
-    },
-    {
-        title: 'Red Bell Pepper',
-        price: 1.49,
-        category: 'Vegetables',
-        image: 'https://images.unsplash.com/photo-1563513307168-a510c9d5718e?auto=format&fit=crop&q=80&w=400',
-        description: 'Crunchy and sweet red bell peppers.',
-        stock: 50
-    },
-    {
-        title: 'Crunchy Chicken Burger',
-        price: 5.99,
-        category: 'Fast Food',
-        image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80&w=400',
-        description: 'Crispy chicken patty with fresh lettuce and mayo.',
-        stock: 20
-    },
-    {
         title: 'Alphonso Mangoes',
-        price: 4.99,
+        price: 499,
         category: 'Fruits',
         image: 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&q=80&w=400',
-        description: 'Sweet and juicy Alphonso mangoes.',
+        description: 'Sweet and juicy seasonal Alphonso mangoes from Ratnagiri.',
         stock: 40
     },
     {
-        title: 'Fresh Broccoli',
-        price: 1.99,
-        category: 'Vegetables',
-        image: 'https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&q=80&w=400',
-        description: 'Healthy green broccoli florets.',
-        stock: 60
-    },
-    {
-        title: 'Pepperoni Pizza',
-        price: 8.99,
-        category: 'Fast Food',
-        image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=400',
-        description: 'Classic pepperoni pizza with mozzarella cheese.',
-        stock: 15
-    },
-    {
-        title: 'Greek Yogurt',
-        price: 2.49,
+        title: 'Fresh Paneer (Dairy)',
+        price: 120,
         category: 'Dairy',
-        image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&q=80&w=400',
-        description: 'Creamy high-protein Greek yogurt.',
-        stock: 80
+        image: 'https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&q=80&w=400',
+        description: 'Soft and fresh malai paneer for your curries.',
+        stock: 50
     },
     {
-        title: 'Whole Wheat Bread',
-        price: 2.99,
-        category: 'Bakery',
-        image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=400',
-        description: 'Freshly baked whole wheat bread.',
+        title: 'Masala Samosas (4pcs)',
+        price: 60,
+        category: 'Snacks',
+        image: 'https://images.unsplash.com/photo-1601050638917-3f94ddb4065d?auto=format&fit=crop&q=80&w=400',
+        description: 'Crispy and spicy traditional Indian samosas.',
         stock: 30
     },
     {
-        title: 'Cold Brew Coffee',
-        price: 3.49,
-        category: 'Beverages',
-        image: 'https://images.unsplash.com/photo-1559496417-e7f25cb247f3?auto=format&fit=crop&q=80&w=400',
-        description: 'Refreshing bottled cold brew coffee.',
+        title: 'Basmati Rice (5kg)',
+        price: 850,
+        category: 'Staples',
+        image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=400',
+        description: 'Long grain aromatic basmati rice.',
         stock: 100
     },
     {
-        title: 'Stawberries',
-        price: 3.99,
-        category: 'Fruits',
-        image: 'https://images.unsplash.com/photo-1464960350410-85f7ea1e1e4a?auto=format&fit=crop&q=80&w=400',
-        description: 'Sweet and succulent red strawberries.',
-        stock: 45
-    },
-    {
-        title: 'Baby Spinach',
-        price: 1.79,
+        title: 'Fresh Bhindi (Okra)',
+        price: 40,
         category: 'Vegetables',
-        image: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&q=80&w=400',
-        description: 'Fresh tender baby spinach leaves.',
-        stock: 70
+        image: 'https://images.unsplash.com/photo-1628151016068-07e0344d2d46?auto=format&fit=crop&q=80&w=400',
+        description: 'Tender and fresh green ladies finger (Bhindi).',
+        stock: 60
     },
     {
-        title: 'Tacos Al Pastor',
-        price: 6.49,
-        category: 'Fast Food',
-        image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=400',
-        description: 'Authentic pork tacos with pineapple.',
+        title: 'Maggi Noodles (Pack of 8)',
+        price: 110,
+        category: 'Snacks',
+        image: 'https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&q=80&w=400',
+        description: 'India\'s favorite 2-minute snack.',
+        stock: 80
+    },
+    {
+        title: 'Amul Butter (500g)',
+        price: 255,
+        category: 'Dairy',
+        image: 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&q=80&w=400',
+        description: 'The taste of India - salted yellow butter.',
+        stock: 100
+    },
+    {
+        title: 'Shahi Biryani Masala',
+        price: 45,
+        category: 'Spices',
+        image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=400',
+        description: 'Authentic spice mix for perfect biryani.',
+        stock: 200
+    },
+    {
+        title: 'Pomegranates (Anaar)',
+        price: 180,
+        category: 'Fruits',
+        image: 'https://images.unsplash.com/photo-1541344999736-83eca272f6fc?auto=format&fit=crop&q=80&w=400',
+        description: 'Rich in antioxidants, sweet red pearls.',
         stock: 25
+    },
+    {
+        title: 'Gobi (Cauliflower)',
+        price: 35,
+        category: 'Vegetables',
+        image: 'https://images.unsplash.com/photo-1568584711075-3d021a7c3ec3?auto=format&fit=crop&q=80&w=400',
+        description: 'Fresh white cauliflower from local mandi.',
+        stock: 40
+    },
+    {
+        title: 'Masala Chai Mix',
+        price: 150,
+        category: 'Beverages',
+        image: 'https://images.unsplash.com/photo-1544787210-22bb83063857?auto=format&fit=crop&q=80&w=400',
+        description: 'Traditional spiced tea premix.',
+        stock: 150
+    },
+    {
+        title: 'Green Chillies (Hari Mirch)',
+        price: 15,
+        category: 'Vegetables',
+        image: 'https://images.unsplash.com/photo-1588165171080-c89acfa5ee83?auto=format&fit=crop&q=80&w=400',
+        description: 'Spicy green chillies for daily cooking.',
+        stock: 500
     }
 ];
 

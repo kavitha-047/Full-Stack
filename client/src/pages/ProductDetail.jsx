@@ -101,7 +101,7 @@ const ProductDetail = () => {
                     <div className="flex items-center gap-6">
                         <div className="flex flex-col">
                             <span className="text-slate-400 font-bold text-xs">Total Price</span>
-                            <span className="text-3xl font-black text-accent">${(product.price * quantity).toFixed(2)}</span>
+                            <span className="text-3xl font-black text-accent">₹{(product.price * quantity).toFixed(2)}</span>
                         </div>
                         <button
                             onClick={handleAddToCart}

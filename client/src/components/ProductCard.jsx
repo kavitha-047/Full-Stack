@@ -37,8 +37,7 @@ const ProductCard = ({ product }) => {
 
                 <div className="mt-auto flex items-center justify-between">
                     <div className="flex flex-col">
-                        <span className="text-xs text-slate-400 font-bold">$10.45/kg</span>
-                        <span className="text-xl font-black text-accent">${product.price.toFixed(2)}</span>
+                        <span className="text-xl font-black text-accent">₹{product.price.toFixed(2)}</span>
                     </div>
                     <button
                         onClick={handleAddToCart}

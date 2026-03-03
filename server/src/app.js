@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
+const morgan = require('morgan');
 const connectDB = require('./config/db');
 
 // Load environment variables
@@ -11,6 +12,19 @@ dotenv.config();
 connectDB();
 
 const app = express();
+
+// Request Logging
+app.use(morgan('dev'));
+
+// Security Middleware
+app.use(require('helmet')());
+const rateLimit = require('express-rate-limit');
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // Limit each IP to 100 requests per windowMs
+    message: 'Too many requests from this IP, please try again after 15 minutes'
+});
+app.use('/api', limiter);
 
 // Middleware
 app.use(cors({
@@ -31,14 +45,8 @@ app.get('/', (req, res) => {
     res.send('API is running...');
 });
 
-// Error handling middleware (placeholder)
-app.use((err, req, res, next) => {
-    const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
-    res.status(statusCode).json({
-        message: err.message,
-        stack: process.env.NODE_ENV === 'production' ? null : err.stack
-    });
-});
+// Centralized Error Handling
+app.use(require('./middleware/error.middleware'));
 
 const PORT = process.env.PORT || 5000;
 

@@ -116,19 +116,19 @@ const OrderDetail = () => {
                                             <p className="text-xs font-bold text-slate-400">Qty: {item.quantity}</p>
                                         </div>
                                     </div>
-                                    <span className="font-black text-navy">${(item.price * item.quantity).toFixed(2)}</span>
+                                    <span className="font-black text-navy">₹{(item.price * item.quantity).toFixed(2)}</span>
                                 </div>
                             ))}
                         </div>
 
-                        <div className="pt-6 border-t border-slate-50 space-y-4">
-                            <div className="flex justify-between font-bold text-slate-400">
+                        <div className="bg-slate-50 rounded-3xl p-8 space-y-4">
+                            <div className="flex justify-between items-center text-slate-500">
                                 <span>Subtotal</span>
-                                <span>${order.totalPrice.toFixed(2)}</span>
+                                <span>₹{order.totalPrice.toFixed(2)}</span>
                             </div>
-                            <div className="flex justify-between items-end">
-                                <span className="text-slate-400 font-bold">Grand Total</span>
-                                <span className="text-3xl font-black text-navy">${order.totalPrice.toFixed(2)}</span>
+                            <div className="flex justify-between items-center pt-4 border-t border-slate-200">
+                                <span className="font-black text-xl text-navy">Total Amount</span>
+                                <span className="text-3xl font-black text-navy">₹{order.totalPrice.toFixed(2)}</span>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,11 @@ const Product = require('../models/product.model');
 // @route   GET /api/products
 // @access  Public
 const getProducts = async (req, res) => {
-    const { category, search } = req.query;
+    const { category, search, minPrice, maxPrice, sort } = req.query;
+    const page = Number(req.query.page) || 1;
+    const limit = Number(req.query.limit) || 12;
+    const skip = (page - 1) * limit;
+
     let query = {};
 
     if (category && category !== 'All') {
@@ -15,8 +19,31 @@ const getProducts = async (req, res) => {
         query.title = { $regex: search, $options: 'i' };
     }
 
-    const products = await Product.find(query);
-    res.json(products);
+    if (minPrice || maxPrice) {
+        query.price = {};
+        if (minPrice) query.price.$gte = Number(minPrice);
+        if (maxPrice) query.price.$lte = Number(maxPrice);
+    }
+
+    // Sort logic
+    let sortBy = {};
+    if (sort === 'newest') sortBy = { createdAt: -1 };
+    else if (sort === 'priceLow') sortBy = { price: 1 };
+    else if (sort === 'priceHigh') sortBy = { price: -1 };
+    else sortBy = { createdAt: -1 };
+
+    const count = await Product.countDocuments(query);
+    const products = await Product.find(query)
+        .sort(sortBy)
+        .limit(limit)
+        .skip(skip);
+
+    res.json({
+        products,
+        page,
+        pages: Math.ceil(count / limit),
+        total: count
+    });
 };
 
 // @desc    Get single product

@@ -66,7 +66,7 @@ const Orders = () => {
                                 <div className="flex items-center justify-between md:justify-end gap-8">
                                     <div className="text-right">
                                         <p className="text-xs font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">Total</p>
-                                        <p className="text-2xl font-black text-navy">${order.totalPrice.toFixed(2)}</p>
+                                        <p className="text-2xl font-black text-navy">₹{order.totalPrice.toFixed(2)}</p>
                                     </div>
 
                                     <div className={`px-4 py-2 rounded-xl flex items-center gap-2 font-bold text-sm ${order.status === 'Delivered' ? 'bg-primary/10 text-primary' : 'bg-slate-100 text-navy'

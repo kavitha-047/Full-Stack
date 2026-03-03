@@ -67,7 +67,7 @@ const AdminOrders = () => {
                                     <td className="px-8 py-6 font-medium text-slate-500">
                                         {new Date(order.createdAt).toLocaleDateString()}
                                     </td>
-                                    <td className="px-8 py-6 font-black text-navy">${order.totalPrice.toFixed(2)}</td>
+                                    <td className="px-8 py-6 font-black text-navy">₹{order.totalPrice.toFixed(2)}</td>
                                     <td className="px-8 py-6">
                                         <select
                                             value={order.status}

@@ -120,7 +120,7 @@ const AdminProducts = () => {
                                     <td className="px-8 py-6">
                                         <span className="bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">{product.category}</span>
                                     </td>
-                                    <td className="px-8 py-6 font-black text-navy">${product.price.toFixed(2)}</td>
+                                    <td className="px-8 py-6 font-black text-navy">₹{product.price.toFixed(2)}</td>
                                     <td className="px-8 py-6">
                                         <span className={`font-bold ${product.stock < 10 ? 'text-accent' : 'text-primary'}`}>{product.stock} in stock</span>
                                     </td>

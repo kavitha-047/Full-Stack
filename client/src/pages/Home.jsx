@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import API from '../api/api';
 import ProductCard from '../components/ProductCard';
+import ProductSkeleton from '../components/ProductSkeleton';
 import { Search, Filter } from 'lucide-react';
 
-const categories = ['All', 'Fruits', 'Vegetables', 'Fast Food', 'Dairy', 'Bakery', 'Beverages'];
+const categories = ['All', 'Fruits', 'Vegetables', 'Staples', 'Dairy', 'Snacks', 'Bakery', 'Beverages', 'Spices'];
 
 const Home = () => {
     const [products, setProducts] = useState([]);
@@ -16,7 +17,7 @@ const Home = () => {
             setLoading(true);
             try {
                 const { data } = await API.get(`/products?category=${category}&search=${search}`);
-                setProducts(data);
+                setProducts(data.products || data); // Fallback if API hasn't updated yet
             } catch (error) {
                 console.error('Error fetching products:', error);
             } finally {
@@ -66,8 +67,8 @@ const Home = () => {
                             key={cat}
                             onClick={() => setCategory(cat)}
                             className={`btn-pill ${category === cat
-                                    ? 'btn-pill-active shadow-lg shadow-navy/20'
-                                    : 'btn-pill-inactive shadow-sm'
+                                ? 'btn-pill-active shadow-lg shadow-navy/20'
+                                : 'btn-pill-inactive shadow-sm'
                                 }`}
                         >
                             {cat}
@@ -80,7 +81,7 @@ const Home = () => {
             {loading ? (
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     {[...Array(8)].map((_, i) => (
-                        <div key={i} className="bg-white rounded-[2rem] aspect-[3/4] animate-pulse border border-slate-100" />
+                        <ProductSkeleton key={i} />
                     ))}
                 </div>
             ) : products.length > 0 ? (

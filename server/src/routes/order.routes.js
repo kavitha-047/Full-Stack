@@ -7,8 +7,8 @@ const {
     updateOrderStatus
 } = require('../controllers/order.controller');
 const { protect, admin } = require('../middleware/auth.middleware');
-
-const { orderSchema, validate } = require('../middleware/validate.middleware');
+const validate = require('../middleware/validate.middleware');
+const { orderSchema } = require('../utils/validationSchemas');
 
 router.route('/')
     .post(protect, validate(orderSchema), addOrderItems)
