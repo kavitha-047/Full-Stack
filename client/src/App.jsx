@@ -15,6 +15,7 @@ import Orders from './pages/Orders';
 import OrderDetail from './pages/OrderDetail';
 import AdminProducts from './pages/AdminProducts';
 import AdminOrders from './pages/AdminOrders';
+import Profile from './pages/Profile';
 
 // Components
 import Navbar from './components/Navbar';
@@ -51,6 +52,7 @@ function App() {
                                 <Route path="/checkout" element={<PrivateRoute><Checkout /></PrivateRoute>} />
                                 <Route path="/orders" element={<PrivateRoute><Orders /></PrivateRoute>} />
                                 <Route path="/orders/:id" element={<PrivateRoute><OrderDetail /></PrivateRoute>} />
+                                <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
 
                                 {/* Admin Routes */}
                                 <Route path="/admin/products" element={<AdminRoute><AdminProducts /></AdminRoute>} />

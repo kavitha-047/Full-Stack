@@ -5,7 +5,9 @@ const {
     getProductById,
     createProduct,
     updateProduct,
-    deleteProduct
+    deleteProduct,
+    createProductReview,
+    getSimilarProducts
 } = require('../controllers/product.controller');
 const { protect, admin } = require('../middleware/auth.middleware');
 
@@ -15,6 +17,9 @@ const { productSchema } = require('../utils/validationSchemas');
 router.route('/')
     .get(getProducts)
     .post(protect, admin, validate(productSchema), createProduct);
+
+router.get('/:id/similar', getSimilarProducts);
+router.post('/:id/reviews', protect, createProductReview);
 
 router.route('/:id')
     .get(getProductById)

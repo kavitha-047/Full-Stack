@@ -44,11 +44,14 @@ const Navbar = () => {
                                 </Link>
                             )}
 
-                            <div className="flex items-center gap-3 bg-slate-100 pl-2 pr-4 py-1.5 rounded-full border border-slate-200 group relative">
-                                <div className="w-8 h-8 rounded-full bg-navy flex items-center justify-center text-white text-xs font-bold">
-                                    {user.name.charAt(0)}
-                                </div>
-                                <span className="text-navy font-bold text-sm hidden sm:inline max-w-[100px] truncate">{user.name}</span>
+                            <div className="flex items-center gap-3 bg-slate-100 pl-2 pr-4 py-1.5 rounded-full border border-slate-200 group relative shadow-sm">
+                                <Link to="/profile" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                                    <div className="w-8 h-8 rounded-full bg-navy flex items-center justify-center text-white text-xs font-bold ring-2 ring-white">
+                                        {user.name.charAt(0)}
+                                    </div>
+                                    <span className="text-navy font-bold text-sm hidden sm:inline max-w-[100px] truncate">{user.name}</span>
+                                </Link>
+                                <div className="w-[1px] h-4 bg-slate-300 mx-1" />
                                 <button
                                     onClick={logout}
                                     className="text-slate-400 hover:text-red-500 transition-colors"
