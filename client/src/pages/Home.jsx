@@ -17,7 +17,7 @@ const Home = () => {
             setLoading(true);
             try {
                 const { data } = await API.get(`/products?category=${category}&search=${search}`);
-                setProducts(data.products || data); // Fallback if API hasn't updated yet
+                setProducts(data.products);
             } catch (error) {
                 console.error('Error fetching products:', error);
             } finally {

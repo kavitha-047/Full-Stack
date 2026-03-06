@@ -20,11 +20,6 @@ const ProductCard = ({ product }) => {
                     alt={product.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute bottom-3 left-3 flex gap-2">
-                    <span className="bg-white/90 backdrop-blur-md text-navy text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm">
-                        75 cal
-                    </span>
-                </div>
             </Link>
 
             <div className="flex flex-col flex-grow">
